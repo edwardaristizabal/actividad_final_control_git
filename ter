@@ -1,0 +1,100 @@
+[33mcommit 114e96eed3f7abfd6d554d0f2159e2b507e61e2c[m[33m ([m[1;36mHEAD -> [m[1;32mAlexandra[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/Alexandra[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Alex1309 <lopez.alexandra@correounivalle.edu.co>
+Date:   Tue Jun 18 23:02:38 2019 -0500
+
+    ultimos cambios
+
+[1mdiff --git a/apps/productos/templates/productos/tienda.html b/apps/productos/templates/productos/tienda.html[m
+[1mindex 39715a4..cbe7898 100755[m
+[1m--- a/apps/productos/templates/productos/tienda.html[m
+[1m+++ b/apps/productos/templates/productos/tienda.html[m
+[36m@@ -26,7 +26,7 @@[m
+ [m
+                                 <a class="nav-link" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Bebidas</a>[m
+ [m
+[31m-                                <a class="nav-link" id="v-pills-5-tab" data-toggle="pill" href="#v-pills-5" role="tab" aria-controls="v-pills-4" aria-selected="false">Adiciones</a>[m
+[32m+[m[32m                                <a class="nav-link" id="v-pills-5-tab" data-toggle="pill" href="#v-pills-5" role="tab" aria-controls="v-pills-5" aria-selected="false">Adiciones</a>[m
+                             </div>[m
+                         </div>[m
+ [m
+[36m@@ -167,7 +167,7 @@[m
+                                         {% endfor %}[m
+                                     </div>[m
+                                 </div>[m
+[31m-                                <div class="tab-pane fade show active" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-5-tab">[m
+[32m+[m[32m                                <div class="tab-pane fade show" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-5-tab">[m
+                                     <div class="row">[m
+                                         {% for producto in producto_list %}[m
+                                             {% if producto.tipo == "Adición" and producto.estado %}[m
+[1mdiff --git a/apps/tenants/templates/tenants/home_franquicia.html b/apps/tenants/templates/tenants/home_franquicia.html[m
+[1mindex 6c1dbd4..61d78ad 100755[m
+[1m--- a/apps/tenants/templates/tenants/home_franquicia.html[m
+[1m+++ b/apps/tenants/templates/tenants/home_franquicia.html[m
+[36m@@ -130,12 +130,8 @@[m
+         </div>[m
+     </section>[m
+ [m
+[31m-    <section>[m
+[31m-      <h1>MUNDO</h1>[m
+[31m-      <div style="width:500px; heigth:500px" id="map" class="contenido_mapa"></div>[m
+[31m-    </<section>[m
+ [m
+[31m-      </section>[m
+[32m+[m[41m  [m
+     <section class="ftco-appointment">[m
+         <div class="overlay"></div>[m
+         <div class="container-wrap">[m
+[36m@@ -233,17 +229,29 @@[m
+ [m
+       }[m
+ function initMap(){[m
+[32m+[m[32m  var myLatLng = {lat: 3.4304397, lng: -76.5235919};[m
+[32m+[m[32m  var myLatLng2 = {lat: 3.4825472, lng: -76.4936695};[m
+   var map = new google.maps.Map(document.getElementById('map'), {[m
+       zoom: 12,[m
+       center: {[m
+[31m-          lat: 3.557367,[m
+[31m-          lng: -76.421197[m
+[32m+[m[32m          lat: 3.4304397,[m
+[32m+[m[32m          lng: -76.5235919[m
+       }, // Center the map on Chicago, USA.[m
+       streetViewControl: false,[m
+       fullscreenControlOptions: {[m
+           position: google.maps.ControlPosition.LEFT_BOTTOM[m
+       },[m
+   });[m
+[32m+[m[32m  var marker = new google.maps.Marker({[m
+[32m+[m[32m    position: myLatLng,[m
+[32m+[m[32m    map: map,[m
+[32m+[m[32m    title: 'Hello World!'[m
+[32m+[m[32m  });[m
+[32m+[m[32m  var marker = new google.maps.Marker({[m
+[32m+[m[32m    position: myLatLng2,[m
+[32m+[m[32m    map: map,[m
+[32m+[m[32m    title: 'Hello World!'[m
+[32m+[m[32m  });[m
+ [m
+ }[m
+ [m
+[1mdiff --git a/apps/usuarios/templates/usuarios/dash_admin.html b/apps/usuarios/templates/usuarios/dash_admin.html[m
+[1mindex 734876c..cbaf6bb 100644[m
+[1m--- a/apps/usuarios/templates/usuarios/dash_admin.html[m
+[1m+++ b/apps/usuarios/templates/usuarios/dash_admin.html[m
+[36m@@ -97,7 +97,7 @@[m
+                         </div>[m
+                     </div>[m
+                 </div>[m
+[31m-                {% if tenant.paquete.nombre == "Standard" or tenant.paquete.nombre == "Premium" %}[m
+[32m+[m[32m                {% if tenant.paquete_id == 2 or tenant.paquete_id == 1 %}[m
+                 <div class = "p-2 col-xl-6 container">[m
+                     <div class="ftco-animate rounded">[m
+                         <div style="border: 1px solid #c49b63" class="p-2 polararea">[m
+[36m@@ -131,7 +131,7 @@[m
+                     </div>[m
+                 </div>[m
+                 {% endif %}[m
+[31m-                {% if tenant.paquete.nombre == "Premium" %}[m
+[32m+[m[32m                {% if tenant.paquete_id == 1 %}[m
+                 <div class = "p-2 col-xl-6 container">[m
+                     <div class="ftco-animate rounded">[m
+                         <div style="border: 1px solid #c49b63" class="p-2 dygno">[m
